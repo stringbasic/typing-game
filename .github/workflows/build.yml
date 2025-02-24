@@ -21,11 +21,11 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller typing-game.spec
-          ls -l dist/
+          ls -l dist/typinggame
       - uses: actions/upload-artifact@v4
         with:
           name: Windows_Typing_Game
-          path: dist/TypingGame.exe
+          path: dist/typinggame/TypingGame.exe
 
       - name: create release
         id: create_release
