@@ -21,6 +21,7 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller typing-game.spec
+          ls -l dist/
       - uses: actions/upload-artifact@v4
         with:
           name: Windows_Typing_Game
@@ -34,7 +35,6 @@ jobs:
         with:
           tag_name: ${{ github.event.head_commit.message }}
           release_name: ${{ github.event.head_commit.message }}
-          overwrite: true
           body: |
             Test Release v1.0.0
           draft: false
